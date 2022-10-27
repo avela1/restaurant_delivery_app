@@ -26,8 +26,8 @@ class AppColors {
     color: textColor,
   );
   static TextStyle headLineStyle1 = GoogleFonts.pacifico(
-    fontSize: Dimensions.height35,
-    color: blueColor,
+    fontSize: Dimensions.height25,
+    color: whiteColor,
     fontWeight: FontWeight.bold,
   );
   static TextStyle headLineStyle2 = GoogleFonts.acme(
