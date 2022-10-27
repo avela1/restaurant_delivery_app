@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: AppColors.blackColor,
         // textTheme: GoogleFonts.abel().copyWith(fontSize: 12),
       ),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }

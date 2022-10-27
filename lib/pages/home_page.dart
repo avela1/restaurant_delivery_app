@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_delivery_app/tabs/tabbar_controller.dart';
 import 'package:restaurant_delivery_app/utils/dimensions.dart';
 
 import './../utils/colors.dart';
@@ -6,14 +7,19 @@ import './../utils/colors.dart';
 // import './../data/dummy_data.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
+  HomePage({Key? key}) : super(key: key);
+  final List tapOptions = [
+    ['Recent', const Text('dsf')],
+    ['Trending', const Text('esdfsd')],
+    ['Top', const Text('dsa fdas')],
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.mainColor,
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: EdgeInsets.symmetric(
@@ -70,10 +76,11 @@ class HomePage extends StatelessWidget {
                     width: Dimensions.height200,
                     child: Container(
                       decoration: BoxDecoration(
-                        color: AppColors.localBackgroundColor,
+                        color: AppColors.whiteColor,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(Dimensions.height100),
                           bottomRight: Radius.circular(Dimensions.height30),
+                          topRight: Radius.circular(Dimensions.height30),
                         ),
                       ),
                       child: Padding(
@@ -137,6 +144,46 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  vertical: Dimensions.height10,
+                  horizontal: Dimensions.height20),
+              child: Container(
+                padding: EdgeInsets.symmetric(
+                  horizontal: Dimensions.height05,
+                  vertical: Dimensions.height02, // 5 top and bottom
+                ),
+                decoration: BoxDecoration(
+                  color: AppColors.whiteColor,
+                  borderRadius: BorderRadius.circular(Dimensions.height10),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    icon: Padding(
+                      padding: EdgeInsets.only(left: Dimensions.height20),
+                      child: Icon(
+                        Icons.search,
+                        color: AppColors.localBackgroundColor,
+                        size: Dimensions.height25,
+                      ),
+                    ),
+                    hintText: 'Search for a specific order',
+                    hintStyle: AppColors.textStyle2.copyWith(
+                      color: AppColors.localBackgroundColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: Dimensions.height20, top: Dimensions.height10),
+              child: const TabbarController(),
             ),
           ],
         ),

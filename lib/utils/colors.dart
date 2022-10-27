@@ -12,18 +12,18 @@ class AppColors {
   static Color textColor = const Color(0xFF616161);
   static Color localPrimary = const Color(0xFF687daf);
   static Color localTextColor = const Color(0xFF3b3b3b);
-  static Color localBackgroundColor = const Color(0xFFeeedf2);
+  static Color localBackgroundColor = const Color(0xFFBDBDBD);
   static Color localYellowColor = const Color(0xFFd2bdd6);
 
   static TextStyle textStyle1 = GoogleFonts.abel(
     fontSize: Dimensions.height20,
     fontWeight: FontWeight.bold,
-    color: textColor,
+    color: localBackgroundColor,
   );
   static TextStyle textStyle2 = GoogleFonts.sourceSerifPro(
     fontSize: Dimensions.height20,
     fontStyle: FontStyle.italic,
-    color: textColor,
+    color: localBackgroundColor,
   );
   static TextStyle headLineStyle1 = GoogleFonts.pacifico(
     fontSize: Dimensions.height25,
