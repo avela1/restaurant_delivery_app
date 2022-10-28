@@ -15,7 +15,7 @@ class Category {
 }
 
 class SubCategory {
-  final String id;
+  final int id;
   final String title;
   const SubCategory({
     required this.id,

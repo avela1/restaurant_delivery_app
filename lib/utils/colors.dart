@@ -8,7 +8,7 @@ class AppColors {
   static Color whiteColor = const Color(0xFFFFFFFF);
   static Color blackColor = const Color(0xFF000000);
   static Color blueColor = const Color(0xFF64B5F6);
-  static Color orangeColor = const Color(0xFFF37867);
+  static Color orangeColor = const Color(0xFFff4e01);
   static Color textColor = const Color(0xFF616161);
   static Color localPrimary = const Color(0xFF687daf);
   static Color localTextColor = const Color(0xFF3b3b3b);

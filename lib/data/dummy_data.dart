@@ -6,32 +6,19 @@ const DUMMY_CATEGORIES = [
   Category(
     id: 'food',
     title: 'Food',
-    subCategories: [SubCategory(id: 'burder', title: 'Burder')],
-  ),
-  Category(
-    id: 'food',
-    title: 'Food',
-    subCategories: [SubCategory(id: 'piza', title: 'Pizza')],
-  ),
-  Category(
-    id: 'food',
-    title: 'Food',
-    subCategories: [SubCategory(id: 'chicken', title: 'Chickens')],
+    subCategories: [
+      SubCategory(id: 1, title: 'Burger'),
+      SubCategory(id: 2, title: 'Pizza'),
+      SubCategory(id: 3, title: 'Chickens'),
+    ],
   ),
   Category(
     id: 'drink',
     title: 'Drinks',
-    subCategories: [SubCategory(id: 'wine', title: 'Wine')],
-  ),
-  Category(
-    id: 'drink',
-    title: 'Drinks',
-    subCategories: [SubCategory(id: 'jouice', title: 'Jouice')],
-  ),
-  Category(
-    id: 'drink',
-    title: 'Drinks',
-    subCategories: [SubCategory(id: 'hotdrink', title: 'Hot Drinks')],
+    subCategories: [
+      SubCategory(id: 1, title: 'Wine'),
+      SubCategory(id: 2, title: 'Jouice'),
+    ],
   ),
 ];
 
