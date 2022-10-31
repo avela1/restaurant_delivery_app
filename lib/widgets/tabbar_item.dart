@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../data/dummy_data.dart';
 import './../../models/category.dart';
 import '../utils/colors.dart';
 import '../utils/dimensions.dart';
@@ -15,6 +16,7 @@ class TabbarItem extends StatefulWidget {
 
 class _TabbarItemState extends State<TabbarItem> {
   int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     // return DefaultTabController(
@@ -52,7 +54,7 @@ class _TabbarItemState extends State<TabbarItem> {
     //         ),
     //       ],
     //     ));
-
+    List menuList = getMenu(widget.category.id, _currentIndex);
     return Container(
       margin: EdgeInsets.only(top: Dimensions.height20),
       width: double.infinity,
@@ -88,13 +90,22 @@ class _TabbarItemState extends State<TabbarItem> {
                             Padding(
                               padding: EdgeInsets.all(Dimensions.height10),
                               child: SvgPicture.asset(
-                                'assets/images/doro2.svg',
+                                widget.category.subCategories[index].imgPath,
                                 height: Dimensions.height40,
+                                color: index == _currentIndex
+                                    ? AppColors.whiteColor
+                                    : AppColors.localBackgroundColor,
                               ),
                             ),
                             Text(
-                              'Doro',
-                              style: AppColors.textStyle1,
+                              widget.category.subCategories[index].title,
+                              style: AppColors.textStyle1.copyWith(
+                                color: index == _currentIndex
+                                    ? AppColors.whiteColor
+                                    : AppColors.localBackgroundColor,
+                                fontSize: Dimensions.height15,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
                           ]),
                     ),
@@ -103,7 +114,39 @@ class _TabbarItemState extends State<TabbarItem> {
               );
             }),
           ),
-        )
+        ),
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.only(
+              right: Dimensions.height20,
+              top: Dimensions.height10,
+            ),
+            child: ListView.builder(
+              itemCount: (menuList.length.toDouble()) ~/ 2,
+              itemBuilder: ((_, index) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    SizedBox(
+                      width: Dimensions.height200,
+                      height: Dimensions.height200,
+                      child: Card(
+                        elevation: Dimensions.height10,
+                      ),
+                    ),
+                    SizedBox(
+                      width: Dimensions.height200,
+                      height: Dimensions.height200,
+                      child: Card(
+                        elevation: Dimensions.height10,
+                      ),
+                    ),
+                  ],
+                );
+              }),
+            ),
+          ),
+        ),
       ]),
     );
   }

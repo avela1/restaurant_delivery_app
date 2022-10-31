@@ -17,8 +17,10 @@ class Category {
 class SubCategory {
   final int id;
   final String title;
+  final String imgPath;
   const SubCategory({
     required this.id,
     required this.title,
+    required this.imgPath,
   });
 }

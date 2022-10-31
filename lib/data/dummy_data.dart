@@ -7,17 +7,17 @@ const DUMMY_CATEGORIES = [
     id: 'food',
     title: 'Food',
     subCategories: [
-      SubCategory(id: 1, title: 'Burger'),
-      SubCategory(id: 2, title: 'Pizza'),
-      SubCategory(id: 3, title: 'Chickens'),
+      SubCategory(id: 1, title: 'Burger', imgPath: 'assets/images/burger.svg'),
+      SubCategory(id: 2, title: 'Pizza', imgPath: 'assets/images/pizza.svg'),
+      SubCategory(id: 3, title: 'Chickens', imgPath: 'assets/images/doro2.svg'),
     ],
   ),
   Category(
     id: 'drink',
     title: 'Drinks',
     subCategories: [
-      SubCategory(id: 1, title: 'Wine'),
-      SubCategory(id: 2, title: 'Jouice'),
+      SubCategory(id: 1, title: 'Wine', imgPath: 'assets/images/wine.svg'),
+      SubCategory(id: 2, title: 'Jouice', imgPath: 'assets/images/juice.svg'),
     ],
   ),
 ];
@@ -28,7 +28,28 @@ const DUMMY_MEALS = [
     id: 'b1',
     categories: [
       'food',
-      'burger',
+      0,
+    ],
+    title: 'Cheddar-Stuffed Burgers',
+    desc:
+        '''Chef Kyle Bailey makes these cheese-stuffed "Juicy Lucy" burgers with a custom blend of ground rib eye steak and pork fatback, and serves them on homemade herb-butter rolls. This streamlined version for the home cook calls for ground beef chuck and store-bought brioche buns.''',
+    price: 250,
+    imgUrl: [
+      'https://purepng.com/public/uploads/large/purepng.com-burgerburger-food-941524644427c1mut.png',
+      'https://purepng.com/public/uploads/large/purepng.com-burgersandwhichfoodbreadcaviarburgerdelicious-21526117698ci2tq.png',
+      'https://purepng.com/public/uploads/large/purepng.com-burger-orientalsandwhichfoodbreadcaviarburgerdelicious-21526117500edrrq.png',
+    ],
+    duration: 20,
+    ingredients:
+        '4 Tomatoes, 1 Tablespoon of Olive Oil, 1 Onion, 250g Spaghetti, Spices, Cheese (optional)',
+    returnPolicy:
+        '''Please freeze the products immediately upon receipt. Products must remain frozen until they are ready to be consumed. Failure to report spoilage within 48 hours. ''',
+  ),
+  Menu(
+    id: 'b1',
+    categories: [
+      'food',
+      1,
     ],
     title: 'Cheddar-Stuffed Burgers',
     desc:
@@ -49,7 +70,7 @@ const DUMMY_MEALS = [
     id: 'b2',
     categories: [
       'food',
-      'burger',
+      0,
     ],
     title: 'Cheddar-Stuffed Burgers',
     desc:
@@ -70,7 +91,7 @@ const DUMMY_MEALS = [
     id: 'b3',
     categories: [
       'food',
-      'burger',
+      0,
     ],
     title: 'Cheddar-Stuffed Burgers',
     desc:
@@ -91,7 +112,7 @@ const DUMMY_MEALS = [
     id: 'b4',
     categories: [
       'food',
-      'burger',
+      0,
     ],
     title: 'Cheddar-Stuffed Burgers',
     desc:
@@ -112,7 +133,7 @@ const DUMMY_MEALS = [
     id: 'w1',
     categories: [
       'drink',
-      'wine',
+      0,
     ],
     title: 'Adrianna Vineyard',
     desc:
@@ -131,7 +152,7 @@ const DUMMY_MEALS = [
     id: 'w1',
     categories: [
       'drink',
-      'juice',
+      3,
     ],
     title: 'Apple Juice',
     ingredients: '18 Apples, Cinnamon (optional), Sugar (optional)',
@@ -147,3 +168,9 @@ const DUMMY_MEALS = [
         '''Per state law, alcohol returns can only be accepted if the product is spoiled or otherwise unfit for consumption, or purchased in error. ''',
   ),
 ];
+
+List<Menu> getMenu(String cat, int id) {
+  return DUMMY_MEALS
+      .where((meal) => meal.categories[0] == cat && meal.categories[1] == id)
+      .toList();
+}

@@ -14,7 +14,7 @@ enum Affordability {
 
 class Menu {
   final String id;
-  final List<String> categories;
+  final List<dynamic> categories;
   final String title;
   final String desc;
   final int price;

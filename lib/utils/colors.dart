@@ -15,7 +15,7 @@ class AppColors {
   static Color localBackgroundColor = const Color(0xFFBDBDBD);
   static Color localYellowColor = const Color(0xFFd2bdd6);
 
-  static TextStyle textStyle1 = GoogleFonts.abel(
+  static TextStyle textStyle1 = GoogleFonts.laila(
     fontSize: Dimensions.height20,
     fontWeight: FontWeight.bold,
     color: localBackgroundColor,
