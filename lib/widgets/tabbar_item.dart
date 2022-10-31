@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_delivery_app/models/category.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
+import './../../models/category.dart';
 import '../utils/colors.dart';
 import '../utils/dimensions.dart';
 
@@ -58,7 +59,7 @@ class _TabbarItemState extends State<TabbarItem> {
       height: double.infinity,
       child: Column(children: [
         SizedBox(
-          height: Dimensions.height120,
+          height: Dimensions.height100,
           width: double.infinity,
           child: ListView.builder(
             physics: const BouncingScrollPhysics(),
@@ -74,8 +75,8 @@ class _TabbarItemState extends State<TabbarItem> {
                 child: AnimatedContainer(
                   duration: const Duration(milliseconds: 300),
                   child: SizedBox(
-                    width: Dimensions.height100,
-                    height: Dimensions.height120,
+                    width: Dimensions.height80,
+                    height: Dimensions.height100,
                     child: Card(
                       color: index == _currentIndex
                           ? AppColors.orangeColor
@@ -84,9 +85,17 @@ class _TabbarItemState extends State<TabbarItem> {
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Image.network(
-                              'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vectorstock.com%2Froyalty-free-vector%2Fburger-icon-hamburgercheeseburger-symbol-vector-23190089&psig=AOvVaw2Cph8rnxKFL8iOwpe3IF19&ust=1667050374016000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCOiEpduEg_sCFQAAAAAdAAAAABAE',
-                            )
+                            Padding(
+                              padding: EdgeInsets.all(Dimensions.height10),
+                              child: SvgPicture.asset(
+                                'assets/images/doro2.svg',
+                                height: Dimensions.height40,
+                              ),
+                            ),
+                            Text(
+                              'Doro',
+                              style: AppColors.textStyle1,
+                            ),
                           ]),
                     ),
                   ),
