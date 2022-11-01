@@ -19,41 +19,6 @@ class _TabbarItemState extends State<TabbarItem> {
 
   @override
   Widget build(BuildContext context) {
-    // return DefaultTabController(
-    //     length: widget.category.subCategories.length,
-    //     child: Column(
-    //       crossAxisAlignment: CrossAxisAlignment.start,
-    //       children: <Widget>[
-    //         TabBar(
-    //           tabs: widget.category.subCategories.map((subCategory) {
-    //             return Tab(
-    //               child: Card(
-    //                 elevation: Dimensions.height05,
-    //                 // child: SizedBox(
-    //                 //   height: 150,
-    //                 //   child: Column(
-    //                 //     children: <Widget>[
-    //                 //       const Icon(Icons.bug_report),
-    //                 //       Text(subCategory.title),
-    //                 //     ],
-    //                 //   ),
-    //                 // ),
-    //               ),
-    //             );
-    //           }).toList(),
-    //           isScrollable: true,
-    //           indicatorColor: AppColors.orangeColor,
-    //           unselectedLabelStyle:
-    //               AppColors.textStyle2.copyWith(fontSize: Dimensions.height15),
-    //           unselectedLabelColor: AppColors.localBackgroundColor,
-    //           labelStyle: AppColors.headLineStyle2
-    //               .copyWith(fontSize: Dimensions.height20),
-    //           labelColor: AppColors.orangeColor,
-    //           indicatorWeight: Dimensions.height03,
-    //           onTap: null,
-    //         ),
-    //       ],
-    //     ));
     List menuList = getMenu(widget.category.id, _currentIndex);
     return Container(
       margin: EdgeInsets.only(top: Dimensions.height20),
@@ -127,18 +92,232 @@ class _TabbarItemState extends State<TabbarItem> {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    SizedBox(
+                    Container(
                       width: Dimensions.height200,
-                      height: Dimensions.height200,
-                      child: Card(
-                        elevation: Dimensions.height10,
+                      height: Dimensions.height300,
+                      margin: EdgeInsets.only(top: Dimensions.height10),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Positioned(
+                            bottom: 0,
+                            child: Container(
+                              width: Dimensions.height200,
+                              height: Dimensions.height200,
+                              decoration: BoxDecoration(
+                                color: AppColors.whiteColor,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(Dimensions.height30),
+                                  topRight:
+                                      Radius.circular(Dimensions.height30),
+                                  bottomLeft:
+                                      Radius.circular(Dimensions.height10),
+                                  bottomRight:
+                                      Radius.circular(Dimensions.height10),
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.8),
+                                    spreadRadius: 1,
+                                    blurRadius: Dimensions.height05,
+                                    offset: Offset(
+                                      Dimensions.height03,
+                                      Dimensions.height03,
+                                    ), // changes position of shadow
+                                  ),
+                                ],
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(Dimensions.height15),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      menuList[index].title,
+                                      style: AppColors.textStyle1.copyWith(
+                                        color: AppColors.blackColor,
+                                        fontSize: Dimensions.height15,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                    Text(
+                                      'It takes only ${menuList[index].duration} min top',
+                                      style: AppColors.textStyle2.copyWith(
+                                        fontSize: Dimensions.height15,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: Dimensions.height10,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          'Birr ${menuList[index].price.toString()}',
+                                          style:
+                                              AppColors.headLineStyle4.copyWith(
+                                            fontSize: Dimensions.height15,
+                                          ),
+                                        ),
+                                        SvgPicture.asset(
+                                          'assets/images/tobefavorite.svg',
+                                          height: Dimensions.height20,
+                                          color: AppColors.orangeColor,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 0,
+                            child: Container(
+                              width: Dimensions.height150,
+                              height: Dimensions.height150,
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.circular(Dimensions.height150),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    spreadRadius: Dimensions.height10,
+                                    blurRadius: Dimensions.height05,
+                                    offset: Offset(
+                                      0,
+                                      Dimensions.height02,
+                                    ), // changes position of shadow
+                                  ),
+                                ],
+                              ),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                child: Image.network(
+                                  menuList[index].imgUrl[0],
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
                       ),
                     ),
-                    SizedBox(
+                    Container(
                       width: Dimensions.height200,
-                      height: Dimensions.height200,
-                      child: Card(
-                        elevation: Dimensions.height10,
+                      height: Dimensions.height300,
+                      margin: EdgeInsets.only(top: Dimensions.height10),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Positioned(
+                            bottom: 0,
+                            child: Container(
+                              width: Dimensions.height200,
+                              height: Dimensions.height200,
+                              decoration: BoxDecoration(
+                                color: AppColors.whiteColor,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(Dimensions.height30),
+                                  topRight:
+                                      Radius.circular(Dimensions.height30),
+                                  bottomLeft:
+                                      Radius.circular(Dimensions.height10),
+                                  bottomRight:
+                                      Radius.circular(Dimensions.height10),
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.8),
+                                    spreadRadius: 1,
+                                    blurRadius: Dimensions.height05,
+                                    offset: Offset(
+                                      Dimensions.height03,
+                                      Dimensions.height03,
+                                    ), // changes position of shadow
+                                  ),
+                                ],
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(Dimensions.height15),
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Cheddar-Stuffed Burgers',
+                                        style: AppColors.textStyle1.copyWith(
+                                          color: AppColors.blackColor,
+                                          fontSize: Dimensions.height15,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                      Text(
+                                        'It takes only 30 min top',
+                                        style: AppColors.textStyle2.copyWith(
+                                          fontSize: Dimensions.height15,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: Dimensions.height10,
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            'Birr 30',
+                                            style: AppColors.headLineStyle4
+                                                .copyWith(
+                                              fontSize: Dimensions.height15,
+                                            ),
+                                          ),
+                                          SvgPicture.asset(
+                                            'assets/images/tobefavorite.svg',
+                                            height: Dimensions.height20,
+                                            color: AppColors.orangeColor,
+                                          ),
+                                        ],
+                                      )
+                                    ]),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 0,
+                            child: Container(
+                              width: Dimensions.height150,
+                              height: Dimensions.height150,
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.circular(Dimensions.height150),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    spreadRadius: Dimensions.height10,
+                                    blurRadius: Dimensions.height05,
+                                    offset: Offset(
+                                      0,
+                                      Dimensions.height02,
+                                    ), // changes position of shadow
+                                  ),
+                                ],
+                              ),
+                              child: CircleAvatar(
+                                backgroundColor: Colors.white,
+                                child: Image.network(
+                                  'https://purepng.com/public/uploads/large/purepng.com-burgerburger-food-941524644427c1mut.png',
+                                  // 'https://purepng.com/public/uploads/large/purepng.com-burger-orientalsandwhichfoodbreadcaviarburgerdelicious-21526117500edrrq.png',
+                                  // 'https://purepng.com/public/uploads/large/purepng.com-sparkling-wine-from-a-bottlealcoholdrinksparling-winesparling-win-in-a-bottlebottle-2315193398554j1hg.png',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],

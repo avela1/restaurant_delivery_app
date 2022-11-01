@@ -28,16 +28,32 @@ class HomePage extends StatelessWidget {
                     vertical: Dimensions.height15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const <Widget>[
-                    Icon(
-                      Icons.menu,
-                      size: 34.0,
-                      semanticLabel: 'menu',
+                  children: <Widget>[
+                    Container(
+                      width: Dimensions.height35,
+                      height: Dimensions.height35,
+                      decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.height35),
+                          color: AppColors.whiteColor),
+                      child: Icon(
+                        Icons.menu,
+                        size: Dimensions.height20,
+                        semanticLabel: 'menu',
+                      ),
                     ),
-                    Icon(
-                      Icons.notifications_none_rounded,
-                      size: 34.0,
-                      semanticLabel: 'notification',
+                    Container(
+                      width: Dimensions.height35,
+                      height: Dimensions.height35,
+                      decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.height35),
+                          color: AppColors.whiteColor),
+                      child: Icon(
+                        Icons.notifications_none_rounded,
+                        size: Dimensions.height20,
+                        semanticLabel: 'notification',
+                      ),
                     ),
                   ],
                 ),
@@ -147,41 +163,42 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    vertical: Dimensions.height10,
-                    horizontal: Dimensions.height20),
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: Dimensions.height05,
-                    vertical: Dimensions.height02, // 5 top and bottom
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
-                    borderRadius: BorderRadius.circular(Dimensions.height10),
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      icon: Padding(
-                        padding: EdgeInsets.only(left: Dimensions.height20),
-                        child: Icon(
-                          Icons.search,
-                          color: AppColors.localBackgroundColor,
-                          size: Dimensions.height25,
-                        ),
-                      ),
-                      hintText: 'Search for a specific order',
-                      hintStyle: AppColors.textStyle2.copyWith(
-                        color: AppColors.localBackgroundColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //       vertical: Dimensions.height10,
+              //       horizontal: Dimensions.height20),
+              //   child: Container(
+              //     padding: EdgeInsets.symmetric(
+              //       horizontal: Dimensions.height05,
+              //       vertical: Dimensions.height02, // 5 top and bottom
+              //     ),
+              //     decoration: BoxDecoration(
+              //       color: AppColors.whiteColor,
+              //       borderRadius: BorderRadius.circular(Dimensions.height10),
+              //     ),
+              //     child: TextField(
+              //       decoration: InputDecoration(
+              //         enabledBorder: InputBorder.none,
+              //         focusedBorder: InputBorder.none,
+              //         icon: Padding(
+              //           padding: EdgeInsets.only(left: Dimensions.height20),
+              //           child: Icon(
+              //             Icons.search,
+              //             color: AppColors.localBackgroundColor,
+              //             size: Dimensions.height25,
+              //           ),
+              //         ),
+              //         hintText: 'Search for a specific order',
+              //         hintStyle: AppColors.textStyle2.copyWith(
+              //           color: AppColors.localBackgroundColor,
+              //           fontWeight: FontWeight.bold,
+              //           fontSize: 15,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+
               Padding(
                 padding: EdgeInsets.only(
                     left: Dimensions.height20, top: Dimensions.height10),

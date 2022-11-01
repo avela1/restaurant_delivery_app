@@ -10,6 +10,11 @@ const DUMMY_CATEGORIES = [
       SubCategory(id: 1, title: 'Burger', imgPath: 'assets/images/burger.svg'),
       SubCategory(id: 2, title: 'Pizza', imgPath: 'assets/images/pizza.svg'),
       SubCategory(id: 3, title: 'Chickens', imgPath: 'assets/images/doro2.svg'),
+      SubCategory(
+          id: 4, title: 'Vegetiable', imgPath: 'assets/images/vegetable.svg'),
+      SubCategory(
+          id: 5, title: 'Fast Food', imgPath: 'assets/images/fastfood.svg'),
+      SubCategory(id: 6, title: 'Fish', imgPath: 'assets/images/fish.svg'),
     ],
   ),
   Category(
@@ -17,7 +22,24 @@ const DUMMY_CATEGORIES = [
     title: 'Drinks',
     subCategories: [
       SubCategory(id: 1, title: 'Wine', imgPath: 'assets/images/wine.svg'),
-      SubCategory(id: 2, title: 'Jouice', imgPath: 'assets/images/juice.svg'),
+      SubCategory(id: 2, title: 'Beer', imgPath: 'assets/images/beer.svg'),
+      SubCategory(
+          id: 3, title: 'HotDrink', imgPath: 'assets/images/hotdrink.svg'),
+      SubCategory(id: 4, title: 'Jouice', imgPath: 'assets/images/juice.svg'),
+      SubCategory(
+          id: 5, title: 'SoftDrink', imgPath: 'assets/images/softdrink.svg'),
+    ],
+  ),
+  Category(
+    id: 'desserts',
+    title: 'Desserts',
+    subCategories: [
+      SubCategory(id: 1, title: 'Cake', imgPath: 'assets/images/cake.svg'),
+      SubCategory(
+          id: 2, title: 'Pastries', imgPath: 'assets/images/pastries.svg'),
+      SubCategory(
+          id: 3, title: 'Deep-fried', imgPath: 'assets/images/fried.svg'),
+      SubCategory(id: 4, title: 'Salad', imgPath: 'assets/images/salad.svg'),
     ],
   ),
 ];
@@ -30,7 +52,7 @@ const DUMMY_MEALS = [
       'food',
       0,
     ],
-    title: 'Cheddar-Stuffed Burgers',
+    title: 'Stuffed Burgers',
     desc:
         '''Chef Kyle Bailey makes these cheese-stuffed "Juicy Lucy" burgers with a custom blend of ground rib eye steak and pork fatback, and serves them on homemade herb-butter rolls. This streamlined version for the home cook calls for ground beef chuck and store-bought brioche buns.''',
     price: 250,
@@ -51,7 +73,7 @@ const DUMMY_MEALS = [
       'food',
       1,
     ],
-    title: 'Cheddar-Stuffed Burgers',
+    title: 'Cheddar Burgers',
     desc:
         '''Chef Kyle Bailey makes these cheese-stuffed "Juicy Lucy" burgers with a custom blend of ground rib eye steak and pork fatback, and serves them on homemade herb-butter rolls. This streamlined version for the home cook calls for ground beef chuck and store-bought brioche buns.''',
     price: 250,
@@ -72,7 +94,7 @@ const DUMMY_MEALS = [
       'food',
       0,
     ],
-    title: 'Cheddar-Stuffed Burgers',
+    title: 'Cheddar-Stuffed ',
     desc:
         '''Chef Kyle Bailey makes these cheese-stuffed "Juicy Lucy" burgers with a custom blend of ground rib eye steak and pork fatback, and serves them on homemade herb-butter rolls. This streamlined version for the home cook calls for ground beef chuck and store-bought brioche buns.''',
     price: 250,
@@ -93,7 +115,7 @@ const DUMMY_MEALS = [
       'food',
       0,
     ],
-    title: 'Cheddar-Stuffed Burgers',
+    title: 'Stuffed Burgers',
     desc:
         '''Chef Kyle Bailey makes these cheese-stuffed "Juicy Lucy" burgers with a custom blend of ground rib eye steak and pork fatback, and serves them on homemade herb-butter rolls. This streamlined version for the home cook calls for ground beef chuck and store-bought brioche buns.''',
     price: 250,
@@ -114,7 +136,7 @@ const DUMMY_MEALS = [
       'food',
       0,
     ],
-    title: 'Cheddar-Stuffed Burgers',
+    title: 'Cheddar Burgers',
     desc:
         '''Chef Kyle Bailey makes these cheese-stuffed "Juicy Lucy" burgers with a custom blend of ground rib eye steak and pork fatback, and serves them on homemade herb-butter rolls. This streamlined version for the home cook calls for ground beef chuck and store-bought brioche buns.''',
     price: 250,

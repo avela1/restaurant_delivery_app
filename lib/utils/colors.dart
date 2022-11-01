@@ -42,7 +42,7 @@ class AppColors {
   );
   static TextStyle headLineStyle4 = GoogleFonts.akayaKanadaka(
     fontSize: Dimensions.height25,
-    color: blueColor,
+    color: orangeColor,
     fontWeight: FontWeight.bold,
   );
 }
