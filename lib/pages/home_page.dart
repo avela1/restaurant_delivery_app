@@ -1,63 +1,62 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurant_delivery_app/tabs/tabbar_controller.dart';
 import 'package:restaurant_delivery_app/utils/dimensions.dart';
 
+import '../widgets/my_appbar.dart';
 import './../utils/colors.dart';
 
 // import './../data/dummy_data.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
-  final List tapOptions = [
-    ['Recent', const Text('dsf')],
-    ['Trending', const Text('esdfsd')],
-    ['Top', const Text('dsa fdas')],
-  ];
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.mainColor,
+        bottomNavigationBar: CurvedNavigationBar(
+          backgroundColor: AppColors.orangeColor,
+          height: Dimensions.height50,
+          color: AppColors.whiteColor,
+          index: 2,
+          items: <Widget>[
+            Icon(
+              Icons.heart_broken,
+              color: AppColors.orangeColor,
+              size: Dimensions.height40,
+            ),
+            Icon(
+              Icons.history,
+              color: AppColors.orangeColor,
+              size: Dimensions.height30,
+            ),
+            Icon(
+              Icons.home,
+              color: AppColors.orangeColor,
+              size: Dimensions.height30,
+            ),
+            Icon(
+              Icons.shopify_rounded,
+              color: AppColors.orangeColor,
+              size: Dimensions.height30,
+            ),
+            Icon(
+              Icons.location_history,
+              color: AppColors.orangeColor,
+              size: Dimensions.height30,
+            ),
+          ],
+          onTap: (index) {
+            //Handle button tap
+          },
+        ),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: Dimensions.height25,
-                    vertical: Dimensions.height15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Container(
-                      width: Dimensions.height35,
-                      height: Dimensions.height35,
-                      decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(Dimensions.height35),
-                          color: AppColors.whiteColor),
-                      child: Icon(
-                        Icons.menu,
-                        size: Dimensions.height20,
-                        semanticLabel: 'menu',
-                      ),
-                    ),
-                    Container(
-                      width: Dimensions.height35,
-                      height: Dimensions.height35,
-                      decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(Dimensions.height35),
-                          color: AppColors.whiteColor),
-                      child: Icon(
-                        Icons.notifications_none_rounded,
-                        size: Dimensions.height20,
-                        semanticLabel: 'notification',
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              const MyAppbar(),
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: Dimensions.height25,
@@ -163,42 +162,41 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              // Padding(
-              //   padding: EdgeInsets.symmetric(
-              //       vertical: Dimensions.height10,
-              //       horizontal: Dimensions.height20),
-              //   child: Container(
-              //     padding: EdgeInsets.symmetric(
-              //       horizontal: Dimensions.height05,
-              //       vertical: Dimensions.height02, // 5 top and bottom
-              //     ),
-              //     decoration: BoxDecoration(
-              //       color: AppColors.whiteColor,
-              //       borderRadius: BorderRadius.circular(Dimensions.height10),
-              //     ),
-              //     child: TextField(
-              //       decoration: InputDecoration(
-              //         enabledBorder: InputBorder.none,
-              //         focusedBorder: InputBorder.none,
-              //         icon: Padding(
-              //           padding: EdgeInsets.only(left: Dimensions.height20),
-              //           child: Icon(
-              //             Icons.search,
-              //             color: AppColors.localBackgroundColor,
-              //             size: Dimensions.height25,
-              //           ),
-              //         ),
-              //         hintText: 'Search for a specific order',
-              //         hintStyle: AppColors.textStyle2.copyWith(
-              //           color: AppColors.localBackgroundColor,
-              //           fontWeight: FontWeight.bold,
-              //           fontSize: 15,
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-
+              Padding(
+                padding: EdgeInsets.symmetric(
+                    vertical: Dimensions.height10,
+                    horizontal: Dimensions.height20),
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: Dimensions.height05,
+                    vertical: Dimensions.height02, // 5 top and bottom
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.whiteColor,
+                    borderRadius: BorderRadius.circular(Dimensions.height10),
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      enabledBorder: InputBorder.none,
+                      focusedBorder: InputBorder.none,
+                      icon: Padding(
+                        padding: EdgeInsets.only(left: Dimensions.height20),
+                        child: Icon(
+                          Icons.search,
+                          color: AppColors.localBackgroundColor,
+                          size: Dimensions.height25,
+                        ),
+                      ),
+                      hintText: 'Search for a specific order',
+                      hintStyle: AppColors.textStyle2.copyWith(
+                        color: AppColors.localBackgroundColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.only(
                     left: Dimensions.height20, top: Dimensions.height10),
