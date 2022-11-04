@@ -1,6 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:restaurant_delivery_app/tabs/tabbar_controller.dart';
+import 'package:restaurant_delivery_app/widgets/tabbar_controller.dart';
 import 'package:restaurant_delivery_app/utils/dimensions.dart';
 
 import '../widgets/my_appbar.dart';
@@ -56,7 +56,10 @@ class HomePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const MyAppbar(),
+              const MyAppbar(
+                icon1: 'assets/images/menu1.svg',
+                icon2: 'assets/images/notification.svg',
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: Dimensions.height25,

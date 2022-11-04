@@ -314,3 +314,12 @@ List<Menu> getMenu(String cat, int id) {
       .where((meal) => meal.categories[0] == cat && meal.categories[1] == id)
       .toList();
 }
+
+List<Menu> getByID(String cat, int subID, String id) {
+  return DUMMY_MEALS
+      .where((meal) =>
+          meal.categories[0] == cat &&
+          meal.categories[1] == subID &&
+          meal.id == id)
+      .toList();
+}

@@ -24,3 +24,11 @@ class SubCategory {
     required this.imgPath,
   });
 }
+
+class MealArguments {
+  final String category;
+  final int subcategory;
+  final String id;
+
+  MealArguments(this.category, this.subcategory, this.id);
+}

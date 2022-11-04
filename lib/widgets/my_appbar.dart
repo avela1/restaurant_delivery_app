@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../utils/colors.dart';
 import '../utils/dimensions.dart';
 
 class MyAppbar extends StatelessWidget {
+  final String icon1;
+  final String icon2;
   const MyAppbar({
     Key? key,
+    required this.icon1,
+    required this.icon2,
   }) : super(key: key);
 
   @override
@@ -22,10 +27,10 @@ class MyAppbar extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.height35),
                 color: AppColors.whiteColor),
-            child: Icon(
-              Icons.menu,
-              size: Dimensions.height30,
-              semanticLabel: 'menu',
+            child: SvgPicture.asset(
+              icon1,
+              height: Dimensions.height30,
+              width: Dimensions.height30,
             ),
           ),
           Container(
@@ -34,10 +39,10 @@ class MyAppbar extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.height35),
                 color: AppColors.whiteColor),
-            child: Icon(
-              Icons.notifications_none_rounded,
-              size: Dimensions.height30,
-              semanticLabel: 'notification',
+            child: SvgPicture.asset(
+              icon2,
+              height: Dimensions.height30,
+              width: Dimensions.height30,
             ),
           ),
         ],

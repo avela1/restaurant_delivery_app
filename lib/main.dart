@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:restaurant_delivery_app/pages/detail_page.dart';
 import './utils/colors.dart';
 
 import './pages/home_page.dart';
@@ -21,9 +22,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.blueColor,
         backgroundColor: AppColors.blackColor,
-        // textTheme: GoogleFonts.abel().copyWith(fontSize: 12),
       ),
-      home: HomePage(),
+      home: const HomePage(),
+      routes: {
+        DetailPage.routeName: (context) => const DetailPage(),
+      },
     );
   }
 }
